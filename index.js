@@ -1,0 +1,142 @@
+const Discord = require("discord.js");
+
+const TOKEN = "NDY0MDg4OTY2MTcwNDExMDE5.Dh57Wg.I-bs7zNiLq4Xc1Lpp_o48h0Enak";
+
+var prefix = ",,";
+
+var bot = new Discord.Client();
+
+bot.on("ready", function(){
+	console.log(`Online: ${new Date()}`);
+	bot.user.setActivity(".＊ 這場﹍×°愛情遊戲°°°×．﹏\\");
+});
+
+bot.on("message", function(message){
+	
+	
+	//Ignore bots
+	if (message.author.bot) return;
+	
+	//if(message.content.indexOf(prefix) !== 0) return;
+	
+	if	(message.content.indexOf(prefix) !== 0) {
+		//const args1 = message.content.split(/ +/g);
+		//const command1 = args1.shift().toLowerCase();
+		const command1 = message.content;
+		
+		var isZousan = command1.includes("早晨");
+		var isZousan1 = command1.includes("おはよう");
+		var isZoutau = command1.includes("早抖");
+		var isZoutau1 = command1.includes("早唞");
+		var isKaty = command1.includes("奇啲");
+		var isKing = command1.includes("國王");
+		var isJohnas = command1.includes("johnas");
+		var isHK = command1.includes("香港");
+		
+		
+		if (isKaty) {
+			message.channel.send("奇啲 :heartpulse: :heartpulse:");
+		}
+		if (isKing) {
+			message.channel.send(":bow::skin-tone-2::bow::skin-tone-2::bow::skin-tone-2::bow::skin-tone-2:");
+		}
+		//if (isHK) {
+		//	message.channel.send("I <3 Hong Kong");
+		//}
+		if (isZousan || isZousan1) {
+			message.channel.send("早晨 :heartpulse: :heartpulse:");
+		}
+		if (isZoutau || isZoutau1) {
+			message.channel.send("早抖 :heartpulse: :heartpulse:");
+		}
+		//if (isJohnas) {
+		//	message.channel.send("憨鳩 :rolling_eyes:");
+		//}
+		
+	}
+	
+	else {
+		
+		//const args = message.content.slice(prefix.length).trim().split(/ +/g);
+		//const command = args.shift().toLowerCase();
+		
+		var args = message.content.substr(message.content.indexOf(' ')+1);
+		const command = message.content.slice(prefix.length).trim().split(/ +/g).shift().toLowerCase();
+		console.log("Args: " + args);
+		console.log("Command: " + command);
+		
+		if (command === "jd") {
+			
+			args = message.content.slice(prefix.length).trim().split(/ +/g);
+			args.shift();
+			
+			console.log(args);
+			console.log(args.length);
+			
+			if (args.length === 1) {
+				var theLink = "畀條粵典 link 你： " + "https://words.hk/zidin/" + args;
+				message.channel.send(theLink);
+			}
+			
+			
+			if (args.length > 1) {
+				var theWords = args[0];
+				for (let i = 1; i < args.length; i++){
+					theWords += "+";
+					theWords += args[i];
+				}
+				var theLink = "畀條粵典 link 你： " + "https://words.hk/zidin/wan/?q=" + theWords;
+				message.channel.send(theLink);
+			}
+			
+			
+		}
+		
+		if (command === "jds") {
+			args = message.content.slice(prefix.length).trim().split(/ +/g);
+			args.shift();
+			
+			if (args.length === 1) {
+				var theLink = "畀條粵典 link 你： " + "https://words.hk/zidin/wan/?q=" + args;
+				message.channel.send(theLink);
+			}
+			
+			
+			if (args.length > 1) {
+				var theWords = args[0];
+				for (let i = 1; i < args.length; i++){
+					theWords += "+";
+					theWords += args[i];
+				}
+				var theLink = "畀條粵典 link 你： " + "https://words.hk/zidin/wan/?q=" + theWords;
+				message.channel.send(theLink);
+			}
+		}
+		
+		
+		
+		/*
+		if (command === "calc"){
+			
+			var theAns = eval(args);
+			message.channel.send(theAns);
+		}
+		*/
+	}
+	console.log("Message: " + message.content);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+bot.login(TOKEN);
+
+
