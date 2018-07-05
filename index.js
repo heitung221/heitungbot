@@ -1,7 +1,5 @@
 const Discord = require("discord.js");
 
-const TOKEN = "NDY0MDg4OTY2MTcwNDExMDE5.Dh57Wg.I-bs7zNiLq4Xc1Lpp_o48h0Enak";
-
 var prefix = ",,";
 
 var bot = new Discord.Client();
@@ -137,6 +135,6 @@ bot.on("message", function(message){
 
 
 
-bot.login(TOKEN);
+bot.login(process.env.BOT_TOKEN);
 
 
