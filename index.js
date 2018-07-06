@@ -51,6 +51,16 @@ bot.on("message", function(message){
 		//	message.channel.send("憨鳩 :rolling_eyes:");
 		//}
 		
+		//1st
+		var isKaty1 = command1.includes("<@!440547246270971904>");
+		var isNgaanngaan = command1.includes("顏顏");
+		if (isKaty1) {
+			message.channel.send("奇啲 :heartpulse: :heartpulse:");
+		}
+		if (isNgaanngaan){
+			message.channel.send("加油啊顏醫師:heart:");
+		}
+		
 	}
 	
 	else {
@@ -132,7 +142,7 @@ bot.on("message", function(message){
 
 
 
-
+//process.env.BOT_TOKEN
 
 
 bot.login(process.env.BOT_TOKEN);
