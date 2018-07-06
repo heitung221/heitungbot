@@ -27,7 +27,7 @@ bot.on("message", function(message){
 		var isZoutau = command1.includes("早抖");
 		var isZoutau1 = command1.includes("早唞");
 		var isKaty = command1.includes("奇啲");
-		var isKing = command1.includes("國王");
+		//var isKing = command1.includes("國王");
 		var isJohnas = command1.includes("johnas");
 		var isHK = command1.includes("香港");
 		
@@ -35,9 +35,9 @@ bot.on("message", function(message){
 		if (isKaty) {
 			message.channel.send("奇啲 :heartpulse: :heartpulse:");
 		}
-		if (isKing) {
-			message.channel.send(":bow::skin-tone-2::bow::skin-tone-2::bow::skin-tone-2::bow::skin-tone-2:");
-		}
+		//if (isKing) {
+		//	message.channel.send(":bow::skin-tone-2::bow::skin-tone-2::bow::skin-tone-2::bow::skin-tone-2:");
+		//}
 		//if (isHK) {
 		//	message.channel.send("I <3 Hong Kong");
 		//}
@@ -133,12 +133,6 @@ bot.on("message", function(message){
 	}
 	console.log("Message: " + message.content);
 });
-
-
-
-
-
-
 
 
 
