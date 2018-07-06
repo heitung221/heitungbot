@@ -26,14 +26,24 @@ bot.on("message", function(message){
 		var isZousan1 = command1.includes("おはよう");
 		var isZoutau = command1.includes("早抖");
 		var isZoutau1 = command1.includes("早唞");
-		var isKaty = command1.includes("奇啲");
+		//var isKaty = command1.includes("奇啲");
+		var isKaty1 = command1.includes("<@!440547246270971904>");
 		//var isKing = command1.includes("國王");
 		var isJohnas = command1.includes("johnas");
 		var isHK = command1.includes("香港");
+		var isNgaanngaan = command1.includes("顏顏");
+		var isNgaanngaan1 = command1.includes("<@!274862591212388352>");
 		
 		
-		if (isKaty) {
+		
+		//if (isKaty) {
+		//	message.channel.send("奇啲 :heartpulse: :heartpulse:");
+		//}
+		if (isKaty1) {
 			message.channel.send("奇啲 :heartpulse: :heartpulse:");
+		}
+		if (isNgaanngaan1){
+			message.channel.send("加油啊顏醫師:heart:");
 		}
 		//if (isKing) {
 		//	message.channel.send(":bow::skin-tone-2::bow::skin-tone-2::bow::skin-tone-2::bow::skin-tone-2:");
@@ -42,24 +52,20 @@ bot.on("message", function(message){
 		//	message.channel.send("I <3 Hong Kong");
 		//}
 		if (isZousan || isZousan1) {
-			message.channel.send("早晨 :heartpulse: :heartpulse:");
+			message.channel.send("早晨 <3 <3");
 		}
 		if (isZoutau || isZoutau1) {
-			message.channel.send("早抖 :heartpulse: :heartpulse:");
+			message.channel.send("早抖 <3 <3");
 		}
 		//if (isJohnas) {
 		//	message.channel.send("憨鳩 :rolling_eyes:");
 		//}
 		
 		//1st
-		var isKaty1 = command1.includes("<@!440547246270971904>");
-		var isNgaanngaan = command1.includes("顏顏");
-		if (isKaty1) {
-			message.channel.send("奇啲 :heartpulse: :heartpulse:");
-		}
-		if (isNgaanngaan){
-			message.channel.send("加油啊顏醫師:heart:");
-		}
+		
+		
+		
+		
 		
 	}
 	
