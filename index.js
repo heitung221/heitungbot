@@ -79,9 +79,9 @@ bot.on("message", function(message){
 		console.log("Args: " + args);
 		console.log("Command: " + command);
 		
-		if (command === "say"){
-			message.channel.send(args);
-		}
+		//if (command === "say"){
+		//	message.channel.send(args);
+		//}
 		
 		
 		if (command === "jd") {
