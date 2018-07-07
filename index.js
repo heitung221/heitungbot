@@ -6,7 +6,7 @@ var bot = new Discord.Client();
 
 bot.on("ready", function(){
 	console.log(`Online: ${new Date()}`);
-	bot.user.setActivity(".＊ 這場﹍×°愛情遊戲°°°×．﹏\\");
+	bot.user.setActivity(".＊ 粵典﹍×°執字會°°°×．﹏\\");
 });
 
 bot.on("message", function(message){
@@ -78,6 +78,11 @@ bot.on("message", function(message){
 		const command = message.content.slice(prefix.length).trim().split(/ +/g).shift().toLowerCase();
 		console.log("Args: " + args);
 		console.log("Command: " + command);
+		
+		if (command === "say"){
+			message.channel.send(args);
+		}
+		
 		
 		if (command === "jd") {
 			
