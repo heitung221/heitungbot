@@ -28,22 +28,30 @@ bot.on("message", function(message){
 		var isZoutau1 = command1.includes("早唞");
 		//var isKaty = command1.includes("奇啲");
 		var isKaty1 = command1.includes("<@!440547246270971904>");
+		var isKaty2 = command1.includes("<@440547246270971904>");
+		
 		//var isKing = command1.includes("國王");
 		var isJohnas = command1.includes("johnas");
 		var isHK = command1.includes("香港");
 		var isNgaanngaan = command1.includes("顏顏");
 		var isNgaanngaan1 = command1.includes("<@!274862591212388352>");
+		var isNgaanngaan2 = command1.includes("<@274862591212388352>");
+		var isHeitung1 = command1.includes("<@!443635312984588288>");
+		var isHeitung2 = command1.includes("<@443635312984588288>");
 		
 		
 		
 		//if (isKaty) {
 		//	message.channel.send("奇啲 :heartpulse: :heartpulse:");
 		//}
-		if (isKaty1) {
+		if (isKaty1 || isKaty2) {
 			message.channel.send("奇啲 :heartpulse: :heartpulse:");
 		}
-		if (isNgaanngaan1){
+		if (isNgaanngaan1 || isNgaanngaan2){
 			message.channel.send("加油啊顏醫師:heart:");
+		}
+		if (isHeitung1 || isHeitung2){
+			message.channel.send("潛水中請稍候...");
 		}
 		//if (isKing) {
 		//	message.channel.send(":bow::skin-tone-2::bow::skin-tone-2::bow::skin-tone-2::bow::skin-tone-2:");
