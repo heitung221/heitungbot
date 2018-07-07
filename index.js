@@ -100,6 +100,11 @@ bot.on("message", function(message){
 			console.log(args);
 			console.log(args.length);
 			
+			if (args.length === 0) {
+				var theLink = "畀條粵典隨機覆核嘅 link 你： " + "https://words.hk/zidin/ceoigei/";
+				message.channel.send(theLink);
+			}
+			
 			if (args.length === 1) {
 				var theLink = "畀條粵典 link 你： " + "https://words.hk/zidin/" + args;
 				message.channel.send(theLink);
