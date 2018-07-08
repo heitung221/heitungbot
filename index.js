@@ -21,7 +21,8 @@ bot.on("message", function(message){
 		//const args1 = message.content.split(/ +/g);
 		//const command1 = args1.shift().toLowerCase();
 		const command1 = message.content;
-		
+		const author1 = message.author;
+		console.log("Author: " + author1);
 		var isZousan = command1.includes("早晨");
 		var isZousan1 = command1.includes("おはよう");
 		var isZoutau = command1.includes("早抖");
@@ -81,11 +82,15 @@ bot.on("message", function(message){
 		
 		//const args = message.content.slice(prefix.length).trim().split(/ +/g);
 		//const command = args.shift().toLowerCase();
+		const author = message.author;
+		console.log("Author: " + author);
 		
 		var args = message.content.substr(message.content.indexOf(' ')+1);
 		const command = message.content.slice(prefix.length).trim().split(/ +/g).shift().toLowerCase();
 		console.log("Args: " + args);
 		console.log("Command: " + command);
+		
+		
 		
 		if (command === "say"){
 			message.channel.send(args);
