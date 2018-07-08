@@ -50,9 +50,9 @@ bot.on("message", function(message){
 		if (isNgaanngaan1 || isNgaanngaan2){
 			message.channel.send("加油啊顏醫師:heart:");
 		}
-		if (isHeitung1 || isHeitung2){
-			message.channel.send("潛水中請稍候...");
-		}
+		//if (isHeitung1 || isHeitung2){
+		//	message.channel.send("潛水中請稍候...");
+		//}
 		//if (isKing) {
 		//	message.channel.send(":bow::skin-tone-2::bow::skin-tone-2::bow::skin-tone-2::bow::skin-tone-2:");
 		//}
