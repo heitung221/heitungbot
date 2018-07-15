@@ -93,7 +93,7 @@ bot.on("message", function(message){
 		
 		
 		if (command === "say"){
-			message.channel.send(args);
+			message.channel.send(message.author + ": " + args);
 		}
 		
 		
