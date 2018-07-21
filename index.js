@@ -61,10 +61,10 @@ bot.on("message", function(message){
 		//	message.channel.send("I <3 Hong Kong");
 		//}
 		if (isZousan || isZousan1) {
-			message.channel.send("早晨 <3 <3");
+			message.channel.send("早晨 " + message.author + " <3 <3");
 		}
 		if (isZoutau || isZoutau1) {
-			message.channel.send("早抖 <3 <3");
+			message.channel.send("早抖 " + message.author + " <3 <3");
 		}
 		//if (isJohnas) {
 		//	message.channel.send("憨鳩 :rolling_eyes:");
@@ -106,12 +106,12 @@ bot.on("message", function(message){
 			console.log(args.length);
 			
 			if (args.length === 0) {
-				var theLink = "畀條粵典隨機覆核嘅 link 你： " + "https://words.hk/zidin/ceoigei/";
+				var theLink = message.author + "畀條粵典隨機覆核嘅 link 你： " + "https://words.hk/zidin/ceoigei/";
 				message.channel.send(theLink);
 			}
 			
 			if (args.length === 1) {
-				var theLink = "畀條粵典 link 你： " + "https://words.hk/zidin/" + args;
+				var theLink = message.author + " 畀條粵典 link 你： " + "https://words.hk/zidin/" + args;
 				message.channel.send(theLink);
 			}
 			
@@ -122,7 +122,7 @@ bot.on("message", function(message){
 					theWords += "+";
 					theWords += args[i];
 				}
-				var theLink = "畀條粵典 link 你： " + "https://words.hk/zidin/wan/?q=" + theWords;
+				var theLink = message.author + " 畀條粵典 link 你： " + "https://words.hk/zidin/wan/?q=" + theWords;
 				message.channel.send(theLink);
 			}
 			
@@ -134,7 +134,7 @@ bot.on("message", function(message){
 			args.shift();
 			
 			if (args.length === 1) {
-				var theLink = "畀條粵典 link 你： " + "https://words.hk/zidin/wan/?q=" + args;
+				var theLink = message.author + "畀條粵典 link 你： " + "https://words.hk/zidin/wan/?q=" + args;
 				message.channel.send(theLink);
 			}
 			
@@ -145,7 +145,7 @@ bot.on("message", function(message){
 					theWords += "+";
 					theWords += args[i];
 				}
-				var theLink = "畀條粵典 link 你： " + "https://words.hk/zidin/wan/?q=" + theWords;
+				var theLink = message.author + "畀條粵典 link 你： " + "https://words.hk/zidin/wan/?q=" + theWords;
 				message.channel.send(theLink);
 			}
 		}
