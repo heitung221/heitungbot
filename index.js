@@ -93,7 +93,13 @@ bot.on("message", function(message){
 		
 		
 		if (command === "say"){
+			
+			if (message.author == "<@443635312984588288>" || message.author == "<@440547246270971904>" || message.author == "<@354628983394009090>"){
+				message.channel.send(args);
+			}
+			else {
 			message.channel.send(message.author + ": " + args);
+			}
 		}
 		
 		
