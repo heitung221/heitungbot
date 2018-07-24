@@ -48,9 +48,9 @@ bot.on("message", function(message){
 		if (isKaty1 || isKaty2) {
 			message.channel.send("奇啲 :heartpulse: :heartpulse:");
 		}
-		if (isNgaanngaan1 || isNgaanngaan2){
-			message.channel.send("加油啊顏醫師:heart:");
-		}
+		//if (isNgaanngaan1 || isNgaanngaan2){
+		//	message.channel.send("加油啊顏醫師:heart:");
+		//}
 		//if (isHeitung1 || isHeitung2){
 		//	message.channel.send("潛水中請稍候...");
 		//}
