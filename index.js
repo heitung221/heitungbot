@@ -23,7 +23,20 @@ bot.on("message", function(message){
 		const command1 = message.content;
 		const author1 = message.author;
 		
-		console.log(message.createdTimestamp);
+		//send Time:
+		var date = new Date(message.createdTimestamp);
+		// Hours part from the timestamp
+		var hours = date.getHours();
+		// Minutes part from the timestamp
+		var minute = date.getMinutes();
+		var minutes = "0" + date.getMinutes();
+		// Seconds part from the timestamp
+		var seconds = "0" + date.getSeconds();
+		var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+		console.log(formattedTime);
+		//早起嘅雀仔有蟲食
+		
+		
 		
 		console.log("Author: " + author1);
 		var isZousan = command1.includes("早晨");
@@ -64,7 +77,21 @@ bot.on("message", function(message){
 		//	message.channel.send("I <3 Hong Kong");
 		//}
 		if (isZousan || isZousan1) {
+			
+			if (hours > 2 && hours <= 8) {
+				message.channel.send("早起嘅雀仔有蟲食，早晨  " + message.author + "  <3 <3");
+			}
+			
+			if (hours > 11 && hours <= 23) {
+				message.channel.send(message.author + "  咁晏仲早晨？");
+			}
+			if (hours >= 0 && hours <= 2) {
+				message.channel.send(message.author + "  咁晏仲早晨？");
+			}
+			
+			else {
 			message.channel.send("早晨  " + message.author + "  <3 <3");
+			}
 		}
 		if (isZoutau || isZoutau1) {
 			message.channel.send("早抖  " + message.author + "  <3 <3");
