@@ -77,7 +77,7 @@ bot.on("message", function(message){
 		//	message.channel.send("I <3 Hong Kong");
 		//}
 		if (isZousan || isZousan1) {
-			
+			/*
 			if (hours > 2 && hours <= 8) {
 				message.channel.send("早起嘅雀仔有蟲食，早晨  " + message.author + "  <3 <3");
 			}
@@ -92,6 +92,8 @@ bot.on("message", function(message){
 			else {
 			message.channel.send("早晨  " + message.author + "  <3 <3");
 			}
+			*/
+			message.channel.send("早晨  " + message.author + "  <3 <3");
 		}
 		if (isZoutau || isZoutau1) {
 			message.channel.send("早抖  " + message.author + "  <3 <3");
