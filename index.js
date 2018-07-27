@@ -22,6 +22,9 @@ bot.on("message", function(message){
 		//const command1 = args1.shift().toLowerCase();
 		const command1 = message.content;
 		const author1 = message.author;
+		
+		console.log(message.createdTimestamp);
+		
 		console.log("Author: " + author1);
 		var isZousan = command1.includes("早晨");
 		var isZousan1 = command1.includes("おはよう");
