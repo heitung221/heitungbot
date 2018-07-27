@@ -82,10 +82,10 @@ bot.on("message", function(message){
 				message.channel.send("早起嘅雀仔有蟲食，早晨  " + message.author + "  <3 <3");
 			}
 			
-			if (hours > 11 && hours <= 23) {
+			else if (hours > 11 && hours <= 23) {
 				message.channel.send(message.author + "  咁晏仲早晨？");
 			}
-			if (hours >= 0 && hours <= 2) {
+			else if (hours >= 0 && hours <= 2) {
 				message.channel.send(message.author + "  咁晏仲早晨？");
 			}
 			
