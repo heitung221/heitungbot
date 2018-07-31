@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const mathjs = require('mathjs');
 
 var prefix = ",,";
 
@@ -210,7 +211,6 @@ bot.on("message", function(message){
 	}
 	console.log("Message: " + message.content);
 });
-
 
 
 
