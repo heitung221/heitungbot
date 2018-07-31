@@ -190,18 +190,36 @@ bot.on("message", function(message){
 		
 		
 		
-		/*
 		if (command === "calc"){
 			
-			var theAns = eval(args);
+			var testANS = mathjs.eval('10 cm to inches');
+			message.channel.send(testANS);
+			
+			
+			try {
+			var theAns = mathjs.eval(args);
 			message.channel.send(theAns);
+			}
+			catch (e) {
+				return message.channel.send("我唔知你想我計啲咩... sor...");
+			}
+			
 		}
-		*/
+		
+		
 	}
 	console.log("Message: " + message.content);
 });
 
 
+
+
+//https://medium.com/dailyjs/how-to-prevent-your-node-js-process-from-crashing-5d40247b8ab2
+process.on('unhandledRejection', (reason, promise) => {
+  console.log('Unhandled Rejection at:', reason.stack || reason)
+  // Recommended: send the information to sentry.io
+  // or whatever crash reporting service you use
+});
 
 //process.env.BOT_TOKEN
 
