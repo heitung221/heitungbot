@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+
 const mathjs = require('mathjs');
 
 var prefix = ",,";
@@ -208,6 +209,91 @@ bot.on("message", function(message){
 		}
 		
 		
+	if (command === "g"){
+				
+				var searchWords = [];
+				
+				for (let i = 0; i < args.length; i++){
+					
+					if (args[i] == " "){
+						searchWords += "+";
+					}
+					
+					else if (args[i] == "+") {
+						searchWords += "%2B";
+					}
+					else {
+					searchWords += args[i];	
+					//searchWords += encodeURI(args[i]);
+					}
+					
+				}
+			
+			message.channel.send("https://www.google.com.hk/search?q=" + searchWords);
+		}
+		
+		if (command === "wiki"){
+			argsPiece = message.content.slice(prefix.length).trim().split(/ +/g);
+			argsPiece.shift();
+			
+				var theLink = "https://zh.wikipedia.org/zh-hk/w/index.php?search=";
+				/*
+				if (args[0] == "," && args[1] == ","){
+					theLink = "https://" + argsPiece[0] + ".wikipedia.org/w/index.php?search=";	
+				}
+				*/
+				var searchWords = [];
+		
+				for (let i = 0; i < args.length; i++){
+					
+					if (args[i] == " "){
+						searchWords += "+";
+					}
+					
+					else if (args[i] == "+") {
+						searchWords += "%2B";
+					}
+					else {
+					searchWords += args[i];	
+					//searchWords += encodeURI(args[i]);
+					}
+					
+				}
+			
+			message.channel.send(theLink + searchWords);
+		}
+		
+		if (command.includes("wiki,")){
+			
+				var theLink = "https://";	
+				for (let i = 5; i < command.length; i++){
+					theLink += command[i];
+				}
+				theLink += ".wikipedia.org/w/index.php?search="
+				
+				
+				var searchWords = [];
+		
+				for (let i = 0; i < args.length; i++){
+					
+					if (args[i] == " "){
+						searchWords += "+";
+					}
+					
+					else if (args[i] == "+") {
+						searchWords += "%2B";
+					}
+					else {
+					searchWords += args[i];	
+					//searchWords += encodeURI(args[i]);
+					}
+					
+				}
+			
+			message.channel.send(theLink + searchWords);
+		}	
+	
+	
 	}
 	console.log("Message: " + message.content);
 });
