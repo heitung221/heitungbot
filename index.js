@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 
 const mathjs = require('mathjs');
+const ytdl = require('ytdl-core');
 
 var prefix = ",,";
 
@@ -301,9 +302,21 @@ bot.on("message", function(message){
 
 bot.on('message', async message => {
 	
+	
+	const author = message.author;
+	console.log("Author: " + author);
+	
+	var args = message.content.substr(message.content.indexOf(' ')+1);
+	const command = message.content.slice(prefix.length).trim().split(/ +/g).shift().toLowerCase();
+	console.log("Args: " + args);
+	console.log("Command: " + command);
+	
+	
+	
+	
 if (!message.guild) return;
 		
-		if (message.content === ',,joinch') {
+		if (command === 'joinch') {
 			// Only try to join the sender's voice channel if they are in one themselves
 			if (message.member.voiceChannel) {
 			  const connection = await message.member.voiceChannel.join();
@@ -311,7 +324,7 @@ if (!message.guild) return;
 			  message.reply('你要入咗 voice chat 先。');
 			}
 		  }
-		if (message.content === ',,fuckoff') {
+		if (command === 'fuckoff') {
 			if (message.guild.voiceConnection){
 			message.guild.voiceConnection.disconnect();
 			}
