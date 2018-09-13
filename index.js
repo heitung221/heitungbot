@@ -312,7 +312,13 @@ if (!message.guild) return;
 			}
 		  }
 		if (message.content === ',,fuckoff') {
-			message.member.voiceChannel.disconnect();
+			if (message.guild.voiceConnection){
+			message.guild.voiceConnection.disconnect();
+			}
+			else 
+			{
+				message.reply("jm9");
+			}
 		}
 });
 
