@@ -311,6 +311,9 @@ if (!message.guild) return;
 			  message.reply('你要入咗 voice chat 先。');
 			}
 		  }
+		if (message.content === ',,fuckoff') {
+			message.member.voiceChannel.disconnect();
+		}
 });
 
 
