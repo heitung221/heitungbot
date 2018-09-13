@@ -333,6 +333,17 @@ if (!message.guild) return;
 				message.reply("jm9");
 			}
 		}
+		if (command === 'playyt'){
+			const connection = await message.member.voiceChannel.join();
+			connection.play(ytdl(
+			args,
+			{ filter: 'audioonly' }));
+		}
+		if (command === 'play'){
+			const connection = await message.member.voiceChannel.join();
+			connection.play(args);
+		}
+		
 });
 
 
