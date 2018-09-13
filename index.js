@@ -229,7 +229,7 @@ bot.on("message", function(message){
 					
 				}
 			
-			message.channel.send("https://www.google.com.hk/search?q=" + searchWords);
+			message.channel.send("LMGTFY: " + "https://www.google.com.hk/search?q=" + searchWords);
 		}
 		
 		if (command === "wiki"){
@@ -297,6 +297,22 @@ bot.on("message", function(message){
 	}
 	console.log("Message: " + message.content);
 });
+
+
+bot.on('message', async message => {
+	
+if (!message.guild) return;
+		
+		if (message.content === ',,joinch') {
+			// Only try to join the sender's voice channel if they are in one themselves
+			if (message.member.voiceChannel) {
+			  const connection = await message.member.voiceChannel.join();
+			} else {
+			  message.reply('你要入咗 voice chat 先。');
+			}
+		  }
+});
+
 
 
 
