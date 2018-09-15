@@ -6,23 +6,7 @@ const ytdl = require('ytdl-core');
 var prefix = ",,";
 
 var bot = new Discord.Client();
-/*
-//try1
-function Play(connection, message){
-	var server = servers[message.guild.id];
-	server.dispatcher = connection.playStream(YTDL(server.queue[0], {filter: "audioonly" }));
-	server.queue.shift();
-	server.dispatcher.on("end", function(){
-		if (server.queue[0]){
-			Play(connection, message);
-		}
-		else {
-			connection.disconnect();
-		}
-	}
-}
-//end of try1
-*/
+
 
 
 bot.on("ready", function(){
@@ -359,15 +343,35 @@ if (!message.guild) return;
 			}
 		}
 		if (command === 'play'){
+			
+			
+			//try1
+			function Play(connection, message){
+				var server = servers[message.guild.id];
+				server.dispatcher = connection.playStream(YTDL(server.queue[0], {filter: "audioonly" }));
+				server.queue.shift();
+				server.dispatcher.on("end", function(){
+					if (server.queue[0]){
+						Play(connection, message);
+					}
+					else {
+						connection.disconnect();
+					}
+				}
+			}
+			//end of try1
+			
+			
+			
 			if (message.member.voiceChannel) {
 			const connection = await message.member.voiceChannel.join();
-			/*
+			
 			//try1
 			var server = servers[message.guild.id];
 			server.queue.push(args);
 			Play(connection, message);
 			//end of try1
-			*/
+			
 			}
 		}
 		
