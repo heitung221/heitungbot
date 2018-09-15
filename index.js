@@ -334,9 +334,10 @@ if (!message.guild) return;
 				message.reply("jm9");
 			}
 		}
-		if (command === 'plays'){
-			const streamOptions = { seek: 0, volume: 1 };
+		if (command === 'yt'){
+			const streamOptions = { seek: 0, volume: 0.2 };
 			var voiceChannel = message.member.voiceChannel;
+			voiceChannel.leave();
 			voiceChannel.join().then(connection => {
 				console.log("joined channel");
 				const stream = ytdl(args, { filter : 'audioonly' });
