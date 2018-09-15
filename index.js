@@ -348,50 +348,35 @@ if (!message.guild) return;
 				});
 			}).catch(err => console.log(err));
 		}
+		
 		if (command === 'play'){
-			
-			/*
-			//try1
-			function Play(connection, message){
-				var server = 0;
-				server.dispatcher = connection.playStream(YTDL(server.queue[0], {filter: "audioonly" }));
-				server.queue.shift();
-				server.dispatcher.on("end", function(){
-					if (server.queue[0]){
-						Play(connection, message);
-					}
-					else {
-						connection.disconnect();
-					}
-				});
-			}
-			//end of try1
-			*/
 			message.member.voiceChannel.join()
 			.then(connection => {
 			return connection.playFile(args);
 			})
 			.then(dispatcher => {
 			dispatcher.on('error', console.error);
-			if (message.content.includes("pause")){
-				dispatcher.on("pause");
-			}
-			if (message.content.includes("end")){
-				dispatcher.on("end");
-			}
+			dispatcher.on("end", end => {
+					console.log("left channel");
+					voiceChannel.leave();
+				}
 			})
 			.catch(console.error);
-			
-			
-			
-			//try1
-			//queue.push(args);
-			//Play(connection, message);
-			//end of try1
-			
-			
-			
-		//	}
+		}
+		
+		if (command === 'plays'){
+			message.member.voiceChannel.join()
+			.then(connection => {
+			return connection.playStream(args);
+			})
+			.then(dispatcher => {
+			dispatcher.on('error', console.error);
+			dispatcher.on("end", end => {
+					console.log("left channel");
+					voiceChannel.leave();
+				}
+			})
+			.catch(console.error);
 		}
 		
 });
