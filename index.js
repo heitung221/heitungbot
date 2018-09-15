@@ -357,7 +357,7 @@ if (!message.guild) return;
 					else {
 						connection.disconnect();
 					}
-				}
+				});
 			}
 			//end of try1
 			
