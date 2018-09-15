@@ -361,7 +361,7 @@ if (!message.guild) return;
 			}
 			//end of try1
 			*/
-			voiceChannel.join()
+			message.member.voiceChannel.join()
 			.then(connection => {
 			return connection.playFile(args);
 			})
