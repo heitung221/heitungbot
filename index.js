@@ -334,13 +334,18 @@ if (!message.guild) return;
 				message.reply("jm9");
 			}
 		}
-		if (command === 'playyt'){
-			if (message.member.voiceChannel) {
-			const connection = await message.member.voiceChannel.join();
-			connection.play(ytdl(
-			args,
-			{ filter: 'audioonly' }));
-			}
+		if (command === 'plays'){
+			const streamOptions = { seek: 0, volume: 1 };
+			var voiceChannel = message.member.voiceChannel;
+			voiceChannel.join().then(connection => {
+				console.log("joined channel");
+				const stream = ytdl(args, { filter : 'audioonly' });
+				const dispatcher = connection.playStream(stream, streamOptions);
+				dispatcher.on("end", end => {
+					console.log("left channel");
+					voiceChannel.leave();
+				});
+			}).catch(err => console.log(err));
 		}
 		if (command === 'play'){
 			
@@ -368,10 +373,10 @@ if (!message.guild) return;
 			.then(dispatcher => {
 			dispatcher.on('error', console.error);
 			if (message.content.includes("pause")){
-				dispatcher.pause();
+				dispatcher.on("pause");
 			}
 			if (message.content.includes("end")){
-				dispatcher.end();
+				dispatcher.on("end");
 			}
 			})
 			.catch(console.error);
