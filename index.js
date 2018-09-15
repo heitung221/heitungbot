@@ -6,7 +6,7 @@ const ytdl = require('ytdl-core');
 var prefix = ",,";
 
 var bot = new Discord.Client();
-
+var queue = [];
 
 
 bot.on("ready", function(){
@@ -344,7 +344,7 @@ if (!message.guild) return;
 		}
 		if (command === 'play'){
 			
-			
+			/*
 			//try1
 			function Play(connection, message){
 				var server = 0;
@@ -360,17 +360,30 @@ if (!message.guild) return;
 				});
 			}
 			//end of try1
+			*/
+			voiceChannel.join()
+			.then(connection => {
+			return connection.playFile(args);
+			})
+			.then(dispatcher => {
+			dispatcher.on('error', console.error);
+			if (message.content.includes("pause")){
+				dispatcher.pause();
+			}
+			if (message.content.includes("end")){
+				dispatcher.end();
+			}
+			})
+			.catch(console.error);
 			
 			
-			
-			if (message.member.voiceChannel) {
-			const connection = await message.member.voiceChannel.join();
 			
 			//try1
-			var server = 0;
-			server.queue.push(args);
-			Play(connection, message);
+			//queue.push(args);
+			//Play(connection, message);
 			//end of try1
+			
+			
 			
 			}
 		}
