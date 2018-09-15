@@ -347,7 +347,7 @@ if (!message.guild) return;
 			
 			//try1
 			function Play(connection, message){
-				var server = servers[message.guild.id];
+				var server = 0;
 				server.dispatcher = connection.playStream(YTDL(server.queue[0], {filter: "audioonly" }));
 				server.queue.shift();
 				server.dispatcher.on("end", function(){
@@ -367,7 +367,7 @@ if (!message.guild) return;
 			const connection = await message.member.voiceChannel.join();
 			
 			//try1
-			var server = servers[message.guild.id];
+			var server = 0;
 			server.queue.push(args);
 			Play(connection, message);
 			//end of try1
