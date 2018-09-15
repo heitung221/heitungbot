@@ -385,8 +385,8 @@ if (!message.guild) return;
 			
 			
 			
-			}
-		}
+		//	}
+		//}
 		
 });
 
