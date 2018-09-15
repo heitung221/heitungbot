@@ -356,10 +356,6 @@ if (!message.guild) return;
 			})
 			.then(dispatcher => {
 			dispatcher.on('error', console.error);
-			dispatcher.on("end", end => {
-					console.log("left channel");
-					voiceChannel.leave();
-				}
 			})
 			.catch(console.error);
 		}
@@ -371,10 +367,6 @@ if (!message.guild) return;
 			})
 			.then(dispatcher => {
 			dispatcher.on('error', console.error);
-			dispatcher.on("end", end => {
-					console.log("left channel");
-					voiceChannel.leave();
-				}
 			})
 			.catch(console.error);
 		}
