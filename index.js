@@ -7,6 +7,24 @@ var prefix = ",,";
 
 var bot = new Discord.Client();
 
+//try1
+function Play(connection, message){
+	var server = servers[message.guild.id];
+	server.dispatcher = connection.playStream(YTDL(server.queue[0], {filter: "audioonly" }));
+	server.queue.shift();
+	server.dispatcher.on("end", function(){
+		if (server.queue[0]){
+			Play(connection, message);
+		}
+		else {
+			connection.disconnect();
+		}
+	}
+}
+//end of try1
+
+
+
 bot.on("ready", function(){
 	console.log(`Online: ${new Date()}`);
 	bot.user.setActivity(".＊ 粵典﹍×°執字會°°°×．﹏\\");
@@ -321,27 +339,35 @@ if (!message.guild) return;
 			if (message.member.voiceChannel) {
 			  const connection = await message.member.voiceChannel.join();
 			} else {
-			  message.reply('你要入咗 voice chat 先。');
+			  message.reply('你要入咗 voice chat 先');
 			}
 		  }
 		if (command === 'fuckoff') {
 			if (message.guild.voiceConnection){
 			message.guild.voiceConnection.disconnect();
 			}
-			else 
-			{
+			else {
 				message.reply("jm9");
 			}
 		}
 		if (command === 'playyt'){
+			if (message.member.voiceChannel) {
 			const connection = await message.member.voiceChannel.join();
 			connection.play(ytdl(
 			args,
 			{ filter: 'audioonly' }));
+			}
 		}
 		if (command === 'play'){
+			if (message.member.voiceChannel) {
 			const connection = await message.member.voiceChannel.join();
-			connection.play(args);
+			
+			//try1
+			var server = servers[message.guild.id];
+			server.queue.push(args);
+			//end of try1
+			
+			}
 		}
 		
 });
