@@ -388,7 +388,7 @@ if (!message.guild) return;
 		//	}
 		//}
 		
-});
+}
 
 
 
