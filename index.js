@@ -360,16 +360,32 @@ if (!message.guild) return;
 			.catch(console.error);
 		}
 		
-		if (command === 'plays'){
+		function PlayStream (theLink){
 			message.member.voiceChannel.join()
 			.then(connection => {
-			return connection.playStream(args);
+			return connection.playStream(theLink);
 			})
 			.then(dispatcher => {
 			dispatcher.on('error', console.error);
 			})
 			.catch(console.error);
 		}
+		
+		if (command === 'plays'){
+			PlayStream(args);
+		}
+		/*
+		
+		if (command === 'rthk1') PlayStream("http://rthkaudio1-lh.akamaihd.net/i/radio1_1@355864/master.m3u8")
+		if (command === 'rthk2') PlayStream("http://rthkaudio2-lh.akamaihd.net/i/radio2_1@355865/master.m3u8")
+		if (command === 'rthk3') PlayStream("http://rthkaudio3-lh.akamaihd.net/i/radio3_1@355866/master.m3u8")
+		if (command === 'rthk4') PlayStream("http://rthkaudio4-lh.akamaihd.net/i/radio4_1@355867/master.m3u8")
+		if (command === 'rthk5') PlayStream("http://rthkaudio5-lh.akamaihd.net/i/radio5_1@355868/master.m3u8")
+		if (command === 'rthkp') PlayStream("http://rthkaudio6-lh.akamaihd.net/i/radiopth_1@355869/master.m3u8")
+		if (command === '31') PlayStream("http://www.rthk.hk/feeds/dtt/rthktv31.m3u8")
+		if (command === '997') PlayStream("http://metroradio-lh.akamaihd.net/i/997_h@349799/master.m3u8")
+		if (command === 'nhk1') PlayStream("https://nhkradioakr1-i.akamaihd.net/hls/live/511633/1-r1/1-r1-01.m3u8")
+		*/
 		
 });
 
