@@ -374,7 +374,7 @@ if (!message.guild) return;
 		if (command === 'plays'){
 			PlayStream(args);
 		}
-		/*
+		
 		
 		if (command === 'rthk1') PlayStream("http://rthkaudio1-lh.akamaihd.net/i/radio1_1@355864/master.m3u8")
 		if (command === 'rthk2') PlayStream("http://rthkaudio2-lh.akamaihd.net/i/radio2_1@355865/master.m3u8")
@@ -385,7 +385,7 @@ if (!message.guild) return;
 		if (command === '31') PlayStream("http://www.rthk.hk/feeds/dtt/rthktv31.m3u8")
 		if (command === '997') PlayStream("http://metroradio-lh.akamaihd.net/i/997_h@349799/master.m3u8")
 		if (command === 'nhk1') PlayStream("https://nhkradioakr1-i.akamaihd.net/hls/live/511633/1-r1/1-r1-01.m3u8")
-		*/
+		
 		
 });
 
