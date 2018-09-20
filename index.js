@@ -334,6 +334,14 @@ if (!message.guild) return;
 				message.reply("jm9");
 			}
 		}
+		
+		if (command === 'vol'){
+			if (message.member.voiceChannel) {
+				const streamOptions = { seek: 0, volume: args };
+			}
+		}
+		
+		
 		if (command === 'yt'){
 			const streamOptions = { seek: 0, volume: 0.2 };
 			var voiceChannel = message.member.voiceChannel;
