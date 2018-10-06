@@ -221,10 +221,10 @@ bot.on("message", function(message){
 			
 			try {
 			var theAns = mathjs.eval(args);
-			message.channel.send(theAns);
+			message.channel.send("我諗應該係 " + theAns);
 			}
 			catch (e) {
-				return message.channel.send("我唔知你想我計啲咩... sor... \n你可以睇下 WolframAlpha：\n" + "https://www.wolframalpha.com/input/?i=" + searchWords);
+				return message.channel.send("我蠢，唔知你想我計啲咩... sor... \n\n不過你可以睇下 WolframAlpha 嘅\n" + "https://www.wolframalpha.com/input/?i=" + searchWords);
 			}
 			
 		}
