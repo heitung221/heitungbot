@@ -195,18 +195,36 @@ bot.on("message", function(message){
 		
 		
 		
-		if (command === "calc"){
+		if (command === "calc" || command === "cal"){
 			
 			var testANS = mathjs.eval('10 cm to inches');
 			message.channel.send(testANS);
 			
+			var searchWords = [];
+				
+				for (let i = 0; i < args.length; i++){
+					
+					if (args[i] == " "){
+						searchWords += "+";
+					}
+					
+					else if (args[i] == "+") {
+						searchWords += "%2B";
+					}
+					else {
+					//searchWords += args[i];	
+					searchWords += encodeURI(args[i]);
+					}
+					
+				}
+				
 			
 			try {
 			var theAns = mathjs.eval(args);
 			message.channel.send(theAns);
 			}
 			catch (e) {
-				return message.channel.send("我唔知你想我計啲咩... sor...");
+				return message.channel.send("我唔知你想我計啲咩... sor... 你可以睇下 WolframAlpha： " + "https://www.wolframalpha.com/input/?i=" + searchWords);
 			}
 			
 		}
@@ -369,6 +387,7 @@ if (!message.guild) return;
 		}
 		
 		function PlayStream (theLink){
+			const streamOptions = { seek: 0, volume: 0.2 };
 			message.member.voiceChannel.join()
 			.then(connection => {
 			return connection.playStream(theLink);
