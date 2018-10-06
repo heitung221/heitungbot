@@ -224,7 +224,7 @@ bot.on("message", function(message){
 			message.channel.send(theAns);
 			}
 			catch (e) {
-				return message.channel.send("我唔知你想我計啲咩... sor... 你可以睇下 WolframAlpha： " + "https://www.wolframalpha.com/input/?i=" + searchWords);
+				return message.channel.send("我唔知你想我計啲咩... sor... "\n"你可以睇下 WolframAlpha： " + "https://www.wolframalpha.com/input/?i=" + searchWords);
 			}
 			
 		}
