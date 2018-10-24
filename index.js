@@ -314,7 +314,7 @@ bot.on("message", function(message){
 			message.channel.send(theLink + searchWords);
 		}	
 	
-		/*if (command === "poll"){
+		if (command === "poll"){
 			
 			args = message.content.slice(prefix.length).trim().split(/ +/g);
 			args.shift();
@@ -325,13 +325,13 @@ bot.on("message", function(message){
 			.then(function(message){
 			message.react(":jm9:")
 			});
-		
-		
+	
+	}
 	
 	
-	
-	}*/
 	console.log("Message: " + message.content);
+	
+	
 	}
 });
 
