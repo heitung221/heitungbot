@@ -323,7 +323,7 @@ bot.on("message", function(message){
 			
 			message.channel.send(args[0])
 			.then(function(message){
-			message.react(":jm9:")
+			message.react(":1:")
 			});
 	
 	}
