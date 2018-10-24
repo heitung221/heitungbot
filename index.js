@@ -321,12 +321,21 @@ bot.on("message", function(message){
 			
 			var choices = ["0","🇦","🇧","🇨","🇩","🇪","🇫","🇬","🇭","🇮","🇯"];
 			
-			message.channel.send(args[0])
+			var theMessage;
+			
+			
+			theMessage = args[0];	
+				for (var i = 1; i < args.length; i++){
+					theMessage += "\n"; 
+					theMessage += choices[i] ;
+					theMessage += " " ;
+					theMessage += args[i];
+				}
+			message.channel.send(theMessage)
 			.then(function(message){
 				for (var i = 1; i < args.length; i++){
-					message.channel.send("\n" + choices[i] + " " + args[i]);
-					message.react(choices[i]);
-				}
+				message.react(choices[i]);
+			}
 			});
 		}
 	
