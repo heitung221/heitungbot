@@ -332,6 +332,7 @@ bot.on("message", function(message){
 	
 	}*/
 	console.log("Message: " + message.content);
+	}
 });
 
 
