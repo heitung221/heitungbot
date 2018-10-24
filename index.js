@@ -319,7 +319,7 @@ bot.on("message", function(message){
 			args = message.content.slice(prefix.length).trim().split(/ +/g);
 			args.shift();
 			
-			var choices = [0,🇦,🇧,🇨,🇩,🇪,🇫,🇬,🇭,🇮,🇯];
+			var choices = ["0","🇦","🇧","🇨","🇩","🇪","🇫","🇬","🇭","🇮","🇯"];
 			
 			message.channel.send(args[0])
 			.then(function(message){
