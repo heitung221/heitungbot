@@ -315,9 +315,18 @@ bot.on("message", function(message){
 		}	
 	
 		if (command === "poll"){
-			message.channel.send("test1234");
-			message.react(":jm9:");
-			}
+			
+			args = message.content.slice(prefix.length).trim().split(/ +/g);
+			args.shift();
+			
+			
+			
+			message.channel.send(args[0])
+			.then(function(message){
+			message.react(":jm9:")
+			}).catch(function(){
+			//23443424	
+			});
 		
 		
 	
