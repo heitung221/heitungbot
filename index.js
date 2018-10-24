@@ -314,6 +314,14 @@ bot.on("message", function(message){
 			message.channel.send(theLink + searchWords);
 		}	
 	
+		if (command === "poll"){
+			message.channel.send("test1234");
+			message.react(":jm9:");
+			}
+		
+		
+	
+	
 	
 	}
 	console.log("Message: " + message.content);
