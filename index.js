@@ -319,14 +319,16 @@ bot.on("message", function(message){
 			args = message.content.slice(prefix.length).trim().split(/ +/g);
 			args.shift();
 			
-			
+			var choices = [0,🇦,🇧,🇨,🇩,🇪,🇫,🇬,🇭,🇮,🇯];
 			
 			message.channel.send(args[0])
 			.then(function(message){
-			message.react("🅰")
+				for (var i = 1; i < args.length; i++){
+					message.channel.send("\n" + choices[i] + " " + args[i]);
+					message.react(choices[i]);
+				}
 			});
-	
-	}
+		}
 	
 	
 	console.log("Message: " + message.content);
