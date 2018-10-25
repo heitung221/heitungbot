@@ -140,7 +140,7 @@ bot.on("message", function(message){
 		}
 		
 		
-		if (command === "jd") {
+		if (command === "jd" || command === "典") {
 			
 			args = message.content.slice(prefix.length).trim().split(/ +/g);
 			args.shift();
@@ -172,7 +172,7 @@ bot.on("message", function(message){
 			
 		}
 		
-		if (command === "jds") {
+		if (command === "jds"|| command === "搵典") {
 			args = message.content.slice(prefix.length).trim().split(/ +/g);
 			args.shift();
 			
@@ -195,7 +195,7 @@ bot.on("message", function(message){
 		
 		
 		
-		if (command === "calc" || command === "cal"){
+		if (command === "calc" || command === "cal"|| command === "計"){
 			
 			var testANS = mathjs.eval('10 cm to inches');
 			message.channel.send(testANS);
@@ -314,7 +314,7 @@ bot.on("message", function(message){
 			message.channel.send(theLink + searchWords);
 		}	
 	
-		if (command === "poll"){
+		if (command === "poll" || command === "ask"|| command === "問"){
 			
 			args = message.content.slice(prefix.length).trim().split(/ +/g);
 			args.shift();
@@ -350,7 +350,7 @@ bot.on("message", function(message){
 				});
 			}
 			else {
-				message.channel.send("咁多選擇點答 wo");
+				message.channel.send("咁多選擇叫人點答 wo :cls:");
 			}
 		}
 	
