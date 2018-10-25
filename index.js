@@ -325,7 +325,7 @@ bot.on("message", function(message){
 			
 			
 			if (args.length == 1) {
-				message.channel.send(message.author + "問大家：" + args[0])
+				message.channel.send(message.author + " 問大家：" + args[0])
 				.then(async function(message){
 					await message.react("🙆");
 					await message.react("🙅");
@@ -334,7 +334,7 @@ bot.on("message", function(message){
 			}
 			else if (args.length <= 21) {
 				theMessage == message.author;
-				theMessage += "問大家：";
+				theMessage += " 問大家：";
 				theMessage += args[0];	
 					for (var i = 1; i < args.length; i++){
 						theMessage += "\n"; 
