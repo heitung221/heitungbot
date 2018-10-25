@@ -319,24 +319,30 @@ bot.on("message", function(message){
 			args = message.content.slice(prefix.length).trim().split(/ +/g);
 			args.shift();
 			
-			var choices = ["0","🇦","🇧","🇨","🇩","🇪","🇫","🇬","🇭","🇮","🇯"];
+			var choices = ["0","🇦","🇧","🇨","🇩","🇪","🇫","🇬","🇭","🇮","🇯","🇰","🇱","🇲","🇳","🇴","🇵","🇶","🇷","🇸","🇹"];
 			
 			var theMessage;
 			
-			
-			theMessage = args[0];	
-				for (var i = 1; i < args.length; i++){
-					theMessage += "\n"; 
-					theMessage += choices[i] ;
-					theMessage += " " ;
-					theMessage += args[i];
-				}
-			message.channel.send(theMessage)
-			.then(function(message){
-				for (var i = 1; i < args.length; i++){
-				message.react(choices[i]);
+			if (args.length == 1) {
+				
 			}
-			});
+			else {
+				theMessage = args[0];	
+					for (var i = 1; i < args.length; i++){
+						theMessage += "\n"; 
+						theMessage += choices[i] ;
+						theMessage += " " ;
+						theMessage += args[i];
+					}
+				message.channel.send(theMessage)
+				.then(function(message){
+					for (var i = 1; i < args.length; i++){
+					message.react(choices[i]);
+					setTimeout(message, 100);
+				}
+				
+				});
+			}
 		}
 	
 	
