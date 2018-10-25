@@ -326,9 +326,9 @@ bot.on("message", function(message){
 			
 			if (args.length == 1) {
 				message.channel.send(args[0])
-				.then(function(message){
-					message.react("🙆");
-					message.react("🙅");
+				.then(async function(message){
+					await message.react("🙆");
+					await message.react("🙅");
 				});
 				
 			}
@@ -348,6 +348,9 @@ bot.on("message", function(message){
 				}
 				
 				});
+			}
+			else {
+				message.channel.send("咁多選擇點答 wo");
 			}
 		}
 	
