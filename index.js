@@ -333,7 +333,9 @@ bot.on("message", function(message){
 				
 			}
 			else if (args.length <= 21) {
-				theMessage = args[0];	
+				theMessage == message.author;
+				theMessage += "問大家：";
+				theMessage += args[0];	
 					for (var i = 1; i < args.length; i++){
 						theMessage += "\n"; 
 						theMessage += choices[i] ;
