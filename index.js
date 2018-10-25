@@ -321,7 +321,6 @@ bot.on("message", function(message){
 			
 			var choices = ["0","🇦","🇧","🇨","🇩","🇪","🇫","🇬","🇭","🇮","🇯","🇰","🇱","🇲","🇳","🇴","🇵","🇶","🇷","🇸","🇹"];
 			
-			var theMessage;
 			
 			
 			if (args.length == 1) {
@@ -334,7 +333,7 @@ bot.on("message", function(message){
 			}
 			else if (args.length <= 21) {
 				
-				theMessage == " 問大家：";
+				var theMessage == " 問大家：";
 				theMessage += args[0];	
 					for (var i = 1; i < args.length; i++){
 						theMessage += "\n"; 
