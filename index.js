@@ -323,10 +323,7 @@ bot.on("message", function(message){
 			
 			var theMessage;
 			
-			function sleep(ms){
-				setTimeout(sleep, ms);
-			}
-		
+			
 			if (args.length == 1) {
 				message.channel.send(args[0])
 				.then(function(message){
@@ -344,10 +341,10 @@ bot.on("message", function(message){
 						theMessage += args[i];
 					}
 				message.channel.send(theMessage)
-				.then(function(message){
+				.then(async function(message){
 					for (var i = 1; i < args.length; i++){
-					message.react(choices[i]);
-					sleep(100);
+					await message.react(choices[i]);
+					
 				}
 				
 				});
