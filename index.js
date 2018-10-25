@@ -330,8 +330,8 @@ bot.on("message", function(message){
 			if (args.length == 1) {
 				message.channel.send(args[0])
 				.then(function(message){
-					message.react(🙆);
-					message.react(🙅);
+					message.react("🙆");
+					message.react("🙅");
 				});
 				
 			}
