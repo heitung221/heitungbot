@@ -333,8 +333,8 @@ bot.on("message", function(message){
 				
 			}
 			else if (args.length <= 21) {
-				theMessage == message.author;
-				theMessage += " 問大家：";
+				
+				theMessage == " 問大家：";
 				theMessage += args[0];	
 					for (var i = 1; i < args.length; i++){
 						theMessage += "\n"; 
@@ -342,7 +342,7 @@ bot.on("message", function(message){
 						theMessage += " " ;
 						theMessage += args[i];
 					}
-				message.channel.send(theMessage)
+				message.channel.send(message.author + theMessage)
 				.then(async function(message){
 					for (var i = 1; i < args.length; i++){
 					await message.react(choices[i]);
