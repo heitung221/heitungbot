@@ -323,10 +323,19 @@ bot.on("message", function(message){
 			
 			var theMessage;
 			
+			function sleep(ms){
+				setTimeout(sleep, ms);
+			}
+		
 			if (args.length == 1) {
+				message.channel.send(args[0])
+				.then(function(message){
+					message.react(🙆);
+					message.react(🙅);
+				});
 				
 			}
-			else {
+			else if (args.length <= 21) {
 				theMessage = args[0];	
 					for (var i = 1; i < args.length; i++){
 						theMessage += "\n"; 
@@ -338,7 +347,7 @@ bot.on("message", function(message){
 				.then(function(message){
 					for (var i = 1; i < args.length; i++){
 					message.react(choices[i]);
-					setTimeout(message, 100);
+					sleep(100);
 				}
 				
 				});
