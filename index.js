@@ -379,7 +379,14 @@ bot.on('message', async message => {
 	
 if (!message.guild) return;
 		
-		function Play (theLink) {
+		
+		
+		
+		
+		if (command === 'speak' || command === '講'){
+			
+			
+			function Play (theLink) {
 			
 			message.member.voiceChannel.join()
 			.then(connection => {
@@ -391,10 +398,6 @@ if (!message.guild) return;
 			.catch(console.error);
 			
 		}
-		
-		
-		
-		if (command === 'speak' || command === '講'){
 			
 			//argsPiece = message.content.slice(prefix.length).trim().split(/ +/g);
 			//argsPiece.shift();
