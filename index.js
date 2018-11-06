@@ -403,7 +403,9 @@ if (!message.guild) return;
 			
 			
 				for (let i = 0; i < argsPiece.length; i++){
-				Play('https://words.hk/static/jyutping/' + argsPiece[i] + '.mp3');
+					thisLink = 'https://words.hk/static/jyutping/' + argsPiece[i] + '.mp3';
+					console.log(thisLink);
+				Play(thisLink);
 					}
 		}
 		
