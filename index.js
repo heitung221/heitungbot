@@ -380,7 +380,7 @@ bot.on('message', async message => {
 if (!message.guild) return;
 		
 		
-		/*
+		
 		
 		if (command === 'speak' || command === '講'){
 			
@@ -407,7 +407,7 @@ if (!message.guild) return;
 					}
 		}
 		
-		*/
+		
 		
 		
 		
