@@ -11,6 +11,7 @@
     "discord.io": "https://github.com/woor/discord.io/tarball/gateway_v6",
     "discord.js": "^11.3.2",
     "mathjs": "^5.0.4",
+	"ffmpeg-binaries": "^4.0.0",
     "node-opus": "^0.3.0",
     "ytdl-core": "^0.25.2"
   }
