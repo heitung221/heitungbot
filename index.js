@@ -399,6 +399,7 @@ if (!message.guild) return;
 			//argsPiece = message.content.slice(prefix.length).trim().split(/ +/g);
 			//argsPiece.shift();
 			
+			
 				for (let i = 0; i < args.length; i++){
 				Play('https://words.hk/static/jyutping/' + args[i] + '.mp3');
 					}
