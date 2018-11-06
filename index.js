@@ -398,12 +398,12 @@ if (!message.guild) return;
 			
 		}
 			
-			//argsPiece = message.content.slice(prefix.length).trim().split(/ +/g);
-			//argsPiece.shift();
+			argsPiece = message.content.slice(prefix.length).trim().split(/ +/g);
+			argsPiece.shift();
 			
 			
-				for (let i = 0; i < args.length; i++){
-				Play('https://words.hk/static/jyutping/' + args[i] + '.mp3');
+				for (let i = 0; i < argsPiece.length; i++){
+				Play('https://words.hk/static/jyutping/' + argsPiece[i] + '.mp3');
 					}
 		}
 		
