@@ -1,6 +1,9 @@
 {
   "name": "greeter-bot",
   "version": "1.0.0",
+   "engines": {
+    "node": "8.12.0"
+  }
   "description": "My own Discord bot",
   "main": "index.js",
   "author": "A",
