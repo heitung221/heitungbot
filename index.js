@@ -389,7 +389,7 @@ if (!message.guild) return;
 			
 			message.member.voiceChannel.join()
 			.then(connection => {
-			return connection.playStream(theLink);
+			return connection.playFile(theLink);
 			})
 			.then(dispatcher => {
 			dispatcher.on('error', console.error);
