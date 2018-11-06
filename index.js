@@ -140,7 +140,7 @@ bot.on("message", function(message){
 		}
 		
 		
-		if (command === "jd") {
+		if (command === "jd" || command === "典") {
 			
 			args = message.content.slice(prefix.length).trim().split(/ +/g);
 			args.shift();
@@ -172,7 +172,7 @@ bot.on("message", function(message){
 			
 		}
 		
-		if (command === "jds") {
+		if (command === "jds"|| command === "搵典") {
 			args = message.content.slice(prefix.length).trim().split(/ +/g);
 			args.shift();
 			
@@ -195,18 +195,36 @@ bot.on("message", function(message){
 		
 		
 		
-		if (command === "calc"){
+		if (command === "calc" || command === "cal"|| command === "計"){
 			
 			var testANS = mathjs.eval('10 cm to inches');
 			message.channel.send(testANS);
 			
+			var searchWords = [];
+				
+				for (let i = 0; i < args.length; i++){
+					
+					if (args[i] == " "){
+						searchWords += "+";
+					}
+					
+					else if (args[i] == "+") {
+						searchWords += "%2B";
+					}
+					else {
+					//searchWords += args[i];	
+					searchWords += encodeURI(args[i]);
+					}
+					
+				}
+				
 			
 			try {
 			var theAns = mathjs.eval(args);
-			message.channel.send(theAns);
+			message.channel.send("我諗應該係 " + theAns);
 			}
 			catch (e) {
-				return message.channel.send("我唔知你想我計啲咩... sor...");
+				return message.channel.send("我蠢，唔知你想我計啲咩... sor... \n\n不過你可以睇下 WolframAlpha 嘅\n" + "https://www.wolframalpha.com/input/?i=" + searchWords);
 			}
 			
 		}
@@ -296,9 +314,52 @@ bot.on("message", function(message){
 			message.channel.send(theLink + searchWords);
 		}	
 	
+		if (command === "poll" || command === "ask"|| command === "問"){
+			
+			args = message.content.slice(prefix.length).trim().split(/ +/g);
+			args.shift();
+			
+			var choices = ["0","🇦","🇧","🇨","🇩","🇪","🇫","🇬","🇭","🇮","🇯","🇰","🇱","🇲","🇳","🇴","🇵","🇶","🇷","🇸","🇹"];
+			
+			
+			
+			if (args.length == 1) {
+				message.channel.send(message.author + " 問大家：" + args[0])
+				.then(async function(message){
+					await message.react("🙆");
+					await message.react("🙅");
+				});
+				
+			}
+			else if (args.length <= 21) {
+				
+				var theMessage = " 問大家：";
+				theMessage += args[0];	
+					for (var i = 1; i < args.length; i++){
+						theMessage += "\n"; 
+						theMessage += choices[i] ;
+						theMessage += " " ;
+						theMessage += args[i];
+					}
+				message.channel.send(message.author + theMessage)
+				.then(async function(message){
+					for (var i = 1; i < args.length; i++){
+					await message.react(choices[i]);
+					
+				}
+				
+				});
+			}
+			else {
+				message.channel.send("咁多選擇叫人點答 wo :cls:");
+			}
+		}
+	
+	
+	console.log("Message: " + message.content);
+	
 	
 	}
-	console.log("Message: " + message.content);
 });
 
 
@@ -317,6 +378,39 @@ bot.on('message', async message => {
 	
 	
 if (!message.guild) return;
+		
+		
+		
+		/*
+		
+		if (command === 'speak' || command === '講'){
+			
+			
+			function Play (theLink) {
+			
+			message.member.voiceChannel.join()
+			.then(connection => {
+			return connection.playFile(theLink);
+			})
+			.then(dispatcher => {
+			dispatcher.on('error', console.error);
+			})
+			.catch(console.error);
+			
+		}
+			
+			//argsPiece = message.content.slice(prefix.length).trim().split(/ +/g);
+			//argsPiece.shift();
+			
+			
+				for (let i = 0; i < args.length; i++){
+				Play('https://words.hk/static/jyutping/' + args[i] + '.mp3');
+					}
+		}
+		
+		*/
+		
+		
 		
 		if (command === 'joinch') {
 			// Only try to join the sender's voice channel if they are in one themselves
@@ -369,6 +463,7 @@ if (!message.guild) return;
 		}
 		
 		function PlayStream (theLink){
+			const streamOptions = { seek: 0, volume: 0.2 };
 			message.member.voiceChannel.join()
 			.then(connection => {
 			return connection.playStream(theLink);
