@@ -128,7 +128,7 @@ bot.on("message", function(message){
 		console.log("Command: " + command);
 		
 		
-		
+	
 		if (command === "say"){
 			
 			if (message.author == "<@443635312984588288>" || message.author == "<@440547246270971904>" || message.author == "<@354628983394009090>"){
