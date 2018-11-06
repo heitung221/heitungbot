@@ -379,6 +379,35 @@ bot.on('message', async message => {
 	
 if (!message.guild) return;
 		
+		function Play (theLink) {
+			
+			message.member.voiceChannel.join()
+			.then(connection => {
+			return connection.playFile(theLink);
+			})
+			.then(dispatcher => {
+			dispatcher.on('error', console.error);
+			})
+			.catch(console.error);
+			
+		}
+		
+		
+		
+		if (command === 'speak' || command === '講'){
+			
+			//argsPiece = message.content.slice(prefix.length).trim().split(/ +/g);
+			//argsPiece.shift();
+			
+				for (let i = 0; i < args.length; i++){
+				Play('https://words.hk/static/jyutping/' + args[i] + '.mp3');
+					}
+		}
+		
+		
+		
+		
+		
 		if (command === 'joinch') {
 			// Only try to join the sender's voice channel if they are in one themselves
 			if (message.member.voiceChannel) {
