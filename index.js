@@ -83,26 +83,15 @@ bot.on("message", function(message){
 		//	message.channel.send("I <3 Hong Kong");
 		//}
 		if (isZousan || isZousan1) {
-			/*
-			if (hours > 2 && hours <= 8) {
-				message.channel.send("早起嘅雀仔有蟲食，早晨  " + message.author + "  <3 <3");
-			}
+			if (command1.length == 2){
 			
-			else if (hours > 11 && hours <= 23) {
-				message.channel.send(message.author + "  咁晏仲早晨？");
-			}
-			else if (hours >= 0 && hours <= 2) {
-				message.channel.send(message.author + "  咁晏仲早晨？");
-			}
-			
-			else {
 			message.channel.send("早晨  " + message.author + "  <3 <3");
 			}
-			*/
-			message.channel.send("早晨  " + message.author + "  <3 <3");
 		}
 		if (isZoutau || isZoutau1) {
+			if (command1.length == 2){
 			message.channel.send("早抖  " + message.author + "  <3 <3");
+			}
 		}
 		//if (isJohnas) {
 		//	message.channel.send("憨鳩 :rolling_eyes:");
@@ -334,7 +323,7 @@ bot.on("message", function(message){
 			}
 			else if (args.length <= 21) {
 				
-				var theMessage = " 問大家：\n";
+				var theMessage = " 問大家：";
 				theMessage += args[0];	
 					for (var i = 1; i < args.length; i++){
 						theMessage += "\n"; 
