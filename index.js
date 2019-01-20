@@ -334,7 +334,7 @@ bot.on("message", function(message){
 			}
 			else if (args.length <= 21) {
 				
-				var theMessage = " 問大家：";
+				var theMessage = " 問大家：\n";
 				theMessage += args[0];	
 					for (var i = 1; i < args.length; i++){
 						theMessage += "\n"; 
