@@ -129,6 +129,11 @@ bot.on("message", function(message){
 			}
 		}
 		
+		if (command === "url") {
+			var theUrl = decodeURIComponent(args);
+			message.channel.send(theUrl);
+			
+		}
 		
 		if (command === "jd" || command === "典") {
 			
