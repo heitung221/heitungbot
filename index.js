@@ -447,6 +447,30 @@ if (!message.guild) return;
 			}).catch(err => console.log(err));
 		}
 		
+		if (command === 'album1'){
+				const streamOptions = { seek: 0, volume: 0.2 };
+				var voiceChannel = message.member.voiceChannel;
+				voiceChannel.leave();
+				voiceChannel.join().then(connection => {
+					console.log("joined channel");
+					const stream = ytdl("https://www.youtube.com/playlist?list=PL_sPHlLNmpvwfvX-5pIuhc7eGw47ZGeQj", { filter : 'audioonly' });
+					const dispatcher = connection.playStream(stream, streamOptions);
+					dispatcher.on("end", end => {
+						console.log("left channel");
+						voiceChannel.leave();
+					});
+				}).catch(err => console.log(err));
+			}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
 		if (command === 'play'){
 			message.member.voiceChannel.join()
 			.then(connection => {
