@@ -83,7 +83,7 @@ bot.on("message", function(message){
 		//if (isHK) {
 		//	message.channel.send("I <3 Hong Kong");
 		//}
-		if (isZousan || isZousan1) {
+		if (isZousan) {
 			if (command1.length == 2){
 			
 			message.channel.send("早晨  " + message.author + "  <3 <3");
