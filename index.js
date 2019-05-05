@@ -13,7 +13,7 @@ var queue = [];
 bot.on("ready", function(){
 	console.log(`Online: ${new Date()}`);
 	bot.user.setActivity(".＊ 粵典﹍×°執字會°°°×．﹏\\");
-	client.channels.get("464090973807443968").send("I am ready");
+	bot.channels.get("464090973807443968").send("I am ready");
 });
 
 bot.on("message", function(message){
