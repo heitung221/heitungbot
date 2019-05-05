@@ -13,6 +13,7 @@ var queue = [];
 bot.on("ready", function(){
 	console.log(`Online: ${new Date()}`);
 	bot.user.setActivity(".＊ 粵典﹍×°執字會°°°×．﹏\\");
+	client.channels.get("464090973807443968").send("I am ready");
 });
 
 bot.on("message", function(message){
@@ -46,7 +47,7 @@ bot.on("message", function(message){
 		
 		console.log("Author: " + author1);
 		var isZousan = command1.includes("早晨");
-		var isZousan1 = command1.includes("おはよう");
+		var isZousanJP = command1.includes("おはよう");
 		var isZoutau = command1.includes("早抖");
 		var isZoutau1 = command1.includes("早唞");
 		//var isKaty = command1.includes("奇啲");
@@ -87,6 +88,9 @@ bot.on("message", function(message){
 			
 			message.channel.send("早晨  " + message.author + "  <3 <3");
 			}
+		}
+		if (isZousanJP){
+			message.channel.send(message.author + " おはようございます <3 <3");
 		}
 		if (isZoutau || isZoutau1) {
 			if (command1.length == 2){
@@ -129,6 +133,11 @@ bot.on("message", function(message){
 			}
 		}
 		
+		if (command === "url") {
+			var theUrl = decodeURIComponent(args);
+			message.channel.send(theUrl);
+			
+		}
 		
 		if (command === "jd" || command === "典") {
 			
@@ -321,6 +330,11 @@ bot.on("message", function(message){
 				});
 				
 			}
+			else if (args.length == 0) {
+				message.channel.send("冇問題點問？")
+			}
+			
+			
 			else if (args.length <= 21) {
 				
 				var theMessage = " 問大家：";
@@ -442,6 +456,30 @@ if (!message.guild) return;
 			}).catch(err => console.log(err));
 		}
 		
+		/*if (command === 'album1'){
+				const streamOptions = { seek: 0, volume: 0.2 };
+				var voiceChannel = message.member.voiceChannel;
+				voiceChannel.leave();
+				voiceChannel.join().then(connection => {
+					console.log("joined channel");
+					const stream = ytdl("https://www.youtube.com/playlist?list=PL_sPHlLNmpvwfvX-5pIuhc7eGw47ZGeQj", { filter : 'audioonly' });
+					const dispatcher = connection.playStream(stream, streamOptions);
+					dispatcher.on("end", end => {
+						console.log("left channel");
+						voiceChannel.leave();
+					});
+				}).catch(err => console.log(err));
+			}*/
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
 		if (command === 'play'){
 			message.member.voiceChannel.join()
 			.then(connection => {
@@ -497,5 +535,3 @@ process.on('unhandledRejection', (reason, promise) => {
 
 
 bot.login(process.env.BOT_TOKEN);
-
-
