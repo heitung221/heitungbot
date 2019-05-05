@@ -10,7 +10,6 @@ var queue = [];
 
 
 
-
 bot.on("ready", function(){
 	console.log(`Online: ${new Date()}`);
 	bot.user.setActivity(".＊ 粵典﹍×°執字會°°°×．﹏\\");
@@ -457,11 +456,7 @@ if (!message.guild) return;
 			}).catch(err => console.log(err));
 		}
 		
-
-		/*
-
-		if (command === 'album1'){
-
+		/*if (command === 'album1'){
 				const streamOptions = { seek: 0, volume: 0.2 };
 				var voiceChannel = message.member.voiceChannel;
 				voiceChannel.leave();
@@ -474,9 +469,16 @@ if (!message.guild) return;
 						voiceChannel.leave();
 					});
 				}).catch(err => console.log(err));
-
 			}*/
 
+	
+	
+	
+	
+	
+	
+	
+	
 	
 		if (command === 'play'){
 			message.member.voiceChannel.join()
