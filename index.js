@@ -457,11 +457,11 @@ if (!message.guild) return;
 			}).catch(err => console.log(err));
 		}
 		
-<<<<<<< HEAD
-		/*if (command === 'album1'){
-=======
+
+		/*
+
 		if (command === 'album1'){
->>>>>>> aa653241eca36e3239f174f27b81ead0f6f7d95e
+
 				const streamOptions = { seek: 0, volume: 0.2 };
 				var voiceChannel = message.member.voiceChannel;
 				voiceChannel.leave();
@@ -474,20 +474,9 @@ if (!message.guild) return;
 						voiceChannel.leave();
 					});
 				}).catch(err => console.log(err));
-<<<<<<< HEAD
-			}*/
-=======
-			}
->>>>>>> aa653241eca36e3239f174f27b81ead0f6f7d95e
 
-	
-	
-	
-	
-	
-	
-	
-	
+			}*/
+
 	
 		if (command === 'play'){
 			message.member.voiceChannel.join()
