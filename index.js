@@ -1,6 +1,5 @@
 const Discord = require("discord.js");
 
-
 const mathjs = require('mathjs');
 const ytdl = require('ytdl-core');
 
