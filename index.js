@@ -2,11 +2,13 @@ const Discord = require("discord.js");
 
 const mathjs = require('mathjs');
 const ytdl = require('ytdl-core');
+const cron = require('cron');
 
 var prefix = ",,";
 
 var bot = new Discord.Client();
 var queue = [];
+
 
 
 bot.on("ready", function(){
@@ -16,6 +18,7 @@ bot.on("ready", function(){
 });
 
 bot.on("message", function(message){
+	
 	
 	
 	//Ignore bots
@@ -42,7 +45,17 @@ bot.on("message", function(message){
 		console.log(formattedTime);
 		//早起嘅雀仔有蟲食
 		
-		
+		let scheduledMessage = new cron.CronJob('00 10 00 * * *', () => {
+		// This runs every day at 10:30:00, you can do anything you want
+		//let channel = yourGuild.channels.get('id');
+		//channel.send('You message');
+		bot.channels.get("464090973807443968").send("scheduled Message");
+		});
+	
+		// When you want to start it, use:
+		scheduledMessage.start()
+		// You could also make a command to pause and resume the job
+	
 		
 		console.log("Author: " + author1);
 		var isZousan = command1.includes("早晨");
