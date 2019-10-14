@@ -43,7 +43,7 @@ bot.on("message", function(message){
 		var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
 		console.log(formattedTime);
 		//早起嘅雀仔有蟲食
-		
+		/*
 		let scheduledMessage = new cron.CronJob('00 14 16 * * *', () => {
 		// This runs every day at 10:30:00, you can do anything you want
 		//let channel = yourGuild.channels.get('id');
@@ -54,7 +54,7 @@ bot.on("message", function(message){
 		// When you want to start it, use:
 		scheduledMessage.start()
 		// You could also make a command to pause and resume the job
-	
+	*/
 		
 		console.log("Author: " + author1);
 		var isZousan = command1.includes("早晨");
