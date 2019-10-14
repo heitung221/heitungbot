@@ -44,7 +44,7 @@ bot.on("message", function(message){
 		console.log(formattedTime);
 		//早起嘅雀仔有蟲食
 		
-		let scheduledMessage = new cron.CronJob('00 10 00 * * *', () => {
+		let scheduledMessage = new cron.CronJob('00 11 00 * * *', () => {
 		// This runs every day at 10:30:00, you can do anything you want
 		//let channel = yourGuild.channels.get('id');
 		//channel.send('You message');
