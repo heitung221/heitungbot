@@ -45,11 +45,11 @@ bot.on("message", function(message){
 		console.log(formattedTime);
 		//早起嘅雀仔有蟲食
 		
-		var jScheduleMessage = schedule.scheduleJob('47 17 * * *', function(){
-			bot.channels.get("464090973807443968").send("scheduled Message 1747");
+		var jScheduleMessage = schedule.scheduleJob('53 17 * * *', function(){
+			bot.channels.get("464090973807443968").send("scheduled Message 1753");
 		});
-		var jScheduleMessage2 = schedule.scheduleJob('47 09 * * *', function(){
-			bot.channels.get("464090973807443968").send("scheduled Message 0947");
+		var jScheduleMessage2 = schedule.scheduleJob('53 09 * * *', function(){
+			bot.channels.get("464090973807443968").send("scheduled Message 0953");
 		});
 		/*
 		let scheduledMessage = new cron.CronJob('00 10 00 * * *', () => {
