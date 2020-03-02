@@ -45,7 +45,7 @@ bot.on("message", function(message){
 		console.log(formattedTime);
 		//早起嘅雀仔有蟲食
 		
-		var jScheduleMessage = schedule.scheduleJob({hour: 13, minute: 10, dayOfWeek: 0}, function(){
+		var jScheduleMessage = schedule.scheduleJob({hour: 13, minute: 17, dayOfWeek: 0}, function(){
 		  bot.channels.get("464090973807443968").send('Time for tea!');
 		});
 				
