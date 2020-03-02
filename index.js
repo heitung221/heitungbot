@@ -45,13 +45,18 @@ bot.on("message", function(message){
 		console.log(formattedTime);
 		//早起嘅雀仔有蟲食
 		
-		var jScheduleMessage = schedule.scheduleJob('50 23 * * *', function(){
+		var jScheduleMessage = schedule.scheduleJob({hour: 13, minute: 10, dayOfWeek: 0}, function(){
+		  bot.channels.get("464090973807443968").send('Time for tea!');
+		});
+				
+		/*
+		var jScheduleMessage1 = schedule.scheduleJob('50 23 * * *', function(){
 			bot.channels.get("464090973807443968").send("scheduled Message 1753");
 		});
 		var jScheduleMessage2 = schedule.scheduleJob('50 15 * * *', function(){
 			bot.channels.get("464090973807443968").send("scheduled Message 0953");
 		});
-		/*
+		
 		let scheduledMessage = new cron.CronJob('00 10 00 * * *', () => {
 		// This runs every day at 10:30:00, you can do anything you want
 		//let channel = yourGuild.channels.get('id');
@@ -249,6 +254,28 @@ bot.on("message", function(message){
 			
 		}
 		
+	if (command === "d"){
+				
+				var searchWords = [];
+				
+				for (let i = 0; i < args.length; i++){
+					
+					if (args[i] == " "){
+						searchWords += "+";
+					}
+					
+					else if (args[i] == "+") {
+						searchWords += "%2B";
+					}
+					else {
+					searchWords += args[i];	
+					//searchWords += encodeURI(args[i]);
+					}
+					
+				}
+			
+			message.channel.send("唔會窺探你嘅搜尋引擎: " + "https://duckduckgo.com/?q=" + searchWords);
+		}
 		
 	if (command === "g"){
 				
