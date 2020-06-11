@@ -19,7 +19,6 @@ bot.on("ready", function(){
 bot.on("message", function(message){
 	
 	
-	
 	//Ignore bots
 	if (message.author.bot) return;
 	
