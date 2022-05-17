@@ -91,9 +91,9 @@ bot.on("message", function(message){
 		//if (isKaty) {
 		//	message.channel.send("奇啲 :heartpulse: :heartpulse:");
 		//}
-		if (isKaty1 || isKaty2) {
-			message.channel.send("奇啲 :heartpulse: :heartpulse:");
-		}
+		//if (isKaty1 || isKaty2) {
+		//	message.channel.send("奇啲 :heartpulse: :heartpulse:");
+		//}
 		//if (isNgaanngaan1 || isNgaanngaan2){
 		//	message.channel.send("加油啊顏醫師:heart:");
 		//}
